@@ -1,0 +1,63 @@
+const productDOM = document.querySelector('.product');
+
+const fetchProducts = async () => {
+  try {
+    productDOM.innerHTML = `<h4 class="product-loading">Loading...</h4>`;
+    const params = new URLSearchParams(window.location.search);
+    // console.log(params)
+    const id = params.get('id');
+    // console.log(id);
+
+    const response = data.find((item) => item.id === id);
+    // console.log(response);
+
+    return response;
+  } catch (error) {
+    productDOM.innerHTML = `<p class="error">There was a problem loading the product. Please try again later</p>`;
+  }
+};
+
+const displayProducts = (product) => {
+  const {
+    company,
+    colors,
+    description,
+    name: title,
+    price,
+    image,
+  } = product.fields;
+  const { url: img } = image[0];
+  document.title = title.toUpperCase();
+
+  // colors
+  const colorsList = colors.map((color) => {
+    return `
+      <span class="product-color" style="background: ${color}"></span>
+    `
+  }).join('');
+
+  productDOM.innerHTML = `
+    <div class="product-wrapper">
+      <img src="${img}" alt="${title}" class="img">
+      <div class="product-info">
+        <h3>${title}</h3>
+        <h5>${company}</h5>
+        <span>${price / 100}</span>
+        <div class="colors">
+          ${colorsList}
+        </div>
+        <p>
+          ${description}
+        </p>
+        <button class="btn">add to cart</button>
+      </div>
+    </div>
+  `;
+}
+
+const start = async () => {
+  const data = await fetchProducts();
+  displayProducts(data);
+};
+
+start();

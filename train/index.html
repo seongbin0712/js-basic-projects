@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One IT Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_circle_right" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <!-- NAV -->
+  <nav>
+    <div class="navigation">
+      <ul>
+        <i id="menu-close" class="fas fa-times"></i>
+        <li><a href="register.html">register</a></li>
+        <li><a href="search.html">search</a></li>
+      </ul>
+      <img src="./images/menu.png" alt="menu-btn" id="menu-btn">
+    </div>
+  </nav>
+
+  <section class="home">
+    <div class="container">
+      <div class="input-container date">
+        <label class="label">날짜</label>
+        <input type="date">
+      </div>
+
+      <div class="input-container train">
+        <label class="label">기차 종류</label>
+        <select id="train-selector">
+          <option value="" disabled selected hidden>선택</option>
+          <option value="KTX">KTX</option>
+          <option value="SRT">SRT</option>
+        </select>
+      </div>
+
+      <div class="station">
+        <div class="input-container">
+          <label class="label">출발역</label>
+          <select>
+            <option value="" disabled selected hidden>선택</option>
+            <option value="Busan">부산역</option>
+            <option value="Seoul">서울역</option>
+            <option value="Daejun">대전역</option>
+          </select>
+        </div>
+        <span class="material-symbols-outlined" style="color: black;">
+          arrow_circle_right
+        </span>
+        <div class="input-container">
+          <label class="label">도착역</label>
+          <select>
+            <option value="" disabled selected hidden>선택</option>
+            <option value="Busan">부산역</option>
+            <option value="Seoul">서울역</option>
+            <option value="Daejun">대전역</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="arrival-time">
+        <div class="input-container">
+          <label class="label">출발시간</label>
+          <input type="time">
+        </div>
+        <span class="material-symbols-outlined" style="color: black;">
+          arrow_circle_right
+        </span>
+        <div class="input-container">
+          <label class="label">도착시간</label>
+          <input type="time">
+        </div>
+      </div>
+
+      <div class="info">
+        <div>
+          <label class="label">승차권</label>
+          <input type="text">
+        </div>
+        <div>
+          <label class="label">호차번호</label>
+          <input type="text">
+        </div>
+        <div>
+          <label class="label">좌석번호</label>
+          <input type="text">
+        </div>
+        <div>
+          <label class="label">금액</label>
+          <input type="text">
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="btn-container">
+          <button type="submit" class="btn">입력</button>
+          <button type="reset" class="btn">초기화</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    $("#menu-btn").click(function() {
+      $("nav .navigation ul").addClass("active")
+    })
+    $("#menu-close").click(function() {
+      $("nav .navigation ul").removeClass("active")
+    })
+  </script>
+</body>
+</html>
