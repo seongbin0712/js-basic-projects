@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="navigation">
+      <ul>
+        <i id="menu-close" class="fas fa-times"></i>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">search</a></li>
+      </ul>
+      <img src="./images/menu.png" alt="menu-btn" id="menu-btn">
+    </div>
+  </nav>
+
+  <section class="home">
+    <article class="container">
+      <!-- information -->
+      <div class="info-box">
+        <div class="train">KTX</div>
+        <div class="date">2026-07-12</div>
+        <div class="station-container">
+          <div>부산역</div>
+          <span class="material-symbols-outlined arrow">east</span>
+          <div>서울역</div>
+        </div>
+        <div class="time-container">
+          <div>11:58</div>
+          <span class="material-symbols-outlined arrow">east</span>
+          <div>14:42</div>
+        </div>
+        <span class="material-symbols-outlined open">keyboard_arrow_down</span>
+      </div>
+      <!-- details -->
+      <div class="details">
+        <div class="train-container">
+          <div>호차번호</div>
+          <div>:</div>
+          <div>18호</div>
+        </div>
+        <div class="seat-container">
+          <div>좌석번호</div>
+          <div>:</div>
+          <div>14C</div>
+        </div>
+        <div class="price-container">
+          <div>금액</div>
+          <div>:</div>
+          <div>51700</div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/search.js"></script>
+</body>
+</html>

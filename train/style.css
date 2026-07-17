@@ -2,6 +2,10 @@
 
 /* COMMON */
 
+:root {
+  --transition: all 0.3s linear;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +36,7 @@ span {
 label {
   display: block;
   width: 100px;
+  text-align: center;
 }
 
 select {
@@ -50,18 +55,6 @@ input {
   display: block;
   width: 200px;
   outline: none;
-}
-
-/* header */
-
-.header.active {
-	height: 330px;
-}
-
-.header .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }
 
 /* NAV */
@@ -157,15 +150,23 @@ nav .navigation ul li a.blue:hover {
 }
 
 .home .container {
-  width: 70%;
+  width: 90%;
   padding: 30px;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border-radius: 4px;
-  box-shadow: 2px 2px 3px #c99696;
+  border-radius: 50px;
+  box-shadow: 2px 2px 3px #dfdfdf;
+}
+
+.header-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom: 1px solid black;
+  padding-bottom: 21px;
 }
 
 .input-container {
@@ -173,7 +174,6 @@ nav .navigation ul li a.blue:hover {
   justify-content: start;
   align-items: center;
 }
-
 
 .station {
   padding: 15px 0 5px;
@@ -189,8 +189,16 @@ nav .navigation ul li a.blue:hover {
 .info {
   display: grid;
   padding-top: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
+}
+
+.info label {
+  padding-bottom: 10px;
+}
+
+.info input {
+  width: 70%;
 }
 
 .btn-container {
@@ -207,78 +215,120 @@ nav .navigation ul li a.blue:hover {
   border-radius: 4px;
 }
 
+/* search */
+
+.info-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid rgb(171, 171, 171);
+  border-radius: 8px;
+}
+
+.date {
+  font-size: 1.8rem;
+}
+
+.train {
+  font-size: 1.8rem;
+}
+
+.station-container {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.time-container {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  font-size: 2rem;
+  max-width: 200px;
+}
+
+.arrow {
+  color: black;
+}
+
+.open {
+  font-size: 32px;
+}
+
+.details {
+  display: flex;
+  gap: 40px;
+  font-size: 21px;
+  justify-content: center;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.train-container, .seat-container, .price-container {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid hsl(0, 0%, 67%);
+  border-radius: 12px;
+}
+
+
 /* MEDIA*/
 
-/* @media (max-width: 1200px) {
+@media (max-width: 1280px) {
+  select {
+    width: 170px;
+  }
+
+  input {
+    width: 170px;
+  }
   
+  .container {
+    width: 90%;
+  }
+
+  /* .info {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
 }
 
 @media (max-width: 992px) {
-
-  nav img {
-    width: 150px;
+  .header-selection {
+    align-items: center;
   }
 
-  nav .navigation ul {
-    width: 230px;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: -230px;
-    display: flex;
+  .station, .arrival-time {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background: rgba(17, 20, 104, 0.45);
-    backdrop-filter: blur(4.5px);
-    -webkit-backdrop-filter: blur(4.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    z-index: 99999;
-    transition: 0.3 ease-in-out;
+    padding: 10px;
   }
 
-  nav .navigation ul.active {
-    right: 0px;
+  .info {
+    grid-template-columns: 1fr 1fr;
   }
-
-  #menu-close {
-    display: initial;
-    font-size: 1.6rem;
-    padding: 30px 0 20px 20px;
-    color: black;
-  }
-
-  nav .navigation ul li {
-    padding: 20px 0 20px 40px;
-  }
-
-  nav .navigation ul li a {
-    color: #fff;
-  }
-
-  nav .navigation ul li a.blue {
-    color: #fff;
-    border: 1px solid #fff;
-  }
-
-  #menu-btn {
-    display: initial;
-  }
-  
 }
 
 @media (max-width: 768px) {
-  NAV
-
-  nav {
-    padding: 15px 20px;
-  }
-} */
+  
+}
 
 @media (max-width: 600px) {
+  .home {
+    height: 100%;
+    padding-bottom: 20px;
+  }
+
   label {
-    width: 70px;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
   }
 
   select {
@@ -290,10 +340,11 @@ nav .navigation ul li a.blue:hover {
   }
 
   .home .container {
-    width: 60%;
+    width: 65%;
   }
 
   .input-container {
+    width: 100%;
     flex-direction: column;
   }
 
@@ -305,6 +356,10 @@ nav .navigation ul li a.blue:hover {
   .info {
     grid-template-columns: 1fr;
     place-items: center;
+  }
+
+  .info div {
+    width: 100%;
   }
 
   .btn-container .btn {
