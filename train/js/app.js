@@ -44,5 +44,3 @@ resetBtn.addEventListener("click", function (e) {
   seatNumber.value = "";
   price.value = "";
 });
-
-// ddddd
